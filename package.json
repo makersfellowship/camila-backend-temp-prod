@@ -1,0 +1,33 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^7.6.2",
+    "aws-sdk": "^2.1144.0",
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "cookie-parser": "^1.4.3",
+    "cors": "*",
+    "dotenv": "^16.0.0",
+    "express": "*",
+    "express-session": "^1.17.2",
+    "http-status-codes": "^2.2.0",
+    "jsonwebtoken": "*",
+    "moment": "^2.18.1",
+    "mongoose": "*",
+    "morgan": "^1.8.2",
+    "node-cron": "^3.0.0",
+    "passport": "*",
+    "passport-jwt": "*",
+    "randomstring": "^1.1.5",
+    "sendgrid": "^5.2.3"
+  },
+  "author": "Duvan Salcedo, Nicolas Diaz, Santiago Rios",
+  "license": "ISC"
+}
