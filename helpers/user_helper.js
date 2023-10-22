@@ -187,7 +187,7 @@ const evaluatorsTemplate = ({
       });
 
       // Sending the email
-      SES.sendTemplateEmail(msg);
+      // SES.sendTemplateEmail(msg);
 
       // Evaluator draft
       let draftEvaluator = {
