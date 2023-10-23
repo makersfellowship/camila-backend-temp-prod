@@ -286,7 +286,7 @@ const sendMessageWithLinkCandidateEvaluator = async ({
 		if (templateNameFacebook === template_send_survey_candidate) {
 			const { data } = await axios({
 				method: "POST",
-				url: `https://graph.facebook.com/v17.0/${phone_number_id}/messages?access_token=${token}`,
+				url: `https://graph.facebook.com/v12.0/${phone_number_id}/messages?access_token=${token}`,
 				data: dataFirstTemplate(
 					fullNameCandidate,
 					formatPhone(phoneNumberCandidate),
@@ -363,11 +363,10 @@ const dataFirstTemplate = (
 				{
 					type: "body",
 					parameters: [
-						// TODO Hay que añadir este parámetro en la plantilla de Whatsapp
-						// {
-						// 	type: "text",
-						// 	text: companyName,
-						// },
+						{
+							type: "text",
+							text: companyName,
+						},
 						{
 							type: "text",
 							text: customUrl,

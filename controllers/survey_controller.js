@@ -62,22 +62,22 @@ exports.registerReferenceCheck = async function (req, res) {
 		let customlink = `www.camila.build/survey?survey=${encodeId}&candidate=${encodeEmail}`;
 
 		// Email to candidate to get information about the filling from his references
-		// let msg = {
-		// 	Destination: {
-		// 		ToAddresses: [user.email],
-		// 	},
-		// 	ReplyToAddresses: ["team@camila.build"],
-		// 	Source: "team@camila.build",
-		// 	Template:
-		// 		req.body.surveyTemplate == "6294c4db037b2c370f2b5198"
-		// 			? "EmailCandidatePivot"
-		// 			: "Email_for_canidate_after_applying",
-		// 	TemplateData: JSON.stringify({
-		// 		candidateName: `${user.firstName} ${user.lastName}`,
-		// 		candidateFirstName: user.firstName,
-		// 		linkReference: customlink,
-		// 	}),
-		// };
+		let msg = {
+			Destination: {
+				ToAddresses: [user.email],
+			},
+			ReplyToAddresses: ["team@camila.build"],
+			Source: "team@camila.build",
+			Template:
+				req.body.surveyTemplate == "6294c4db037b2c370f2b5198"
+					? "EmailCandidatePivot"
+					: "Email_for_canidate_after_applying",
+			TemplateData: JSON.stringify({
+				candidateName: `${user.firstName} ${user.lastName}`,
+				candidateFirstName: user.firstName,
+				linkReference: customlink,
+			}),
+		};
 
 		// Send WhatsApp to candidate to track
 		CloudApiController.sendMessageWithLinkCandidateEvaluator({
@@ -88,7 +88,7 @@ exports.registerReferenceCheck = async function (req, res) {
 		});
 
 		// Send Email message
-		// SES.sendTemplateEmail(msg);
+		SES.sendTemplateEmail(msg);
 
 		// Calls the function evaluatorsTemplate to implement the third step of the flow
 		// Evaluator template
