@@ -100,7 +100,7 @@ exports.selfOnboard = async function (req, res) {
         password: password,
       }),
     };
-    SES.sendTemplateEmail(msg);
+    // SES.sendTemplateEmail(msg);
     return res.status(201).json({
       success: true,
       message: "Administrador registered successfully.",
@@ -301,7 +301,7 @@ function sendEmailUsersSurvey({ users, surveyTemplateId, surveyTemplate }) {
   for (const user of users) {
     let msg = {
       Destination: {
-        // CcAddresses: ["dsalcedo0509@gmail.com"],
+        CcAddresses: ["juanluis0217@gmail.com"],
         ToAddresses: [user.email],
       },
       ReplyToAddresses: ["team@camila.build"],
@@ -324,7 +324,7 @@ function sendEmailUsersSurvey({ users, surveyTemplateId, surveyTemplate }) {
     });
 
     // Send Email to candidate
-    SES.sendTemplateEmail(msg);
+    // SES.sendTemplateEmail(msg);
   }
 }
 

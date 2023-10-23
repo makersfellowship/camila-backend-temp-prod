@@ -88,7 +88,7 @@ exports.registerReferenceCheck = async function (req, res) {
 		});
 
 		// Send Email message
-		SES.sendTemplateEmail(msg);
+		// SES.sendTemplateEmail(msg);
 
 		// Calls the function evaluatorsTemplate to implement the third step of the flow
 		// Evaluator template
